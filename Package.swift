@@ -4,7 +4,7 @@ import PackageDescription
 
 // https://developer.apple.com/documentation/swift_packages/bundling_resources_with_a_swift_package
 let package = Package(
-    name: "CSQLite",
+    name: "SQLite3",
     platforms: [.iOS(.v9), .macOS(.v10_10), .tvOS(.v9), .watchOS(.v2)],
     products: [
         .library(
