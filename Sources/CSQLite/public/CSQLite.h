@@ -1,4 +1,4 @@
-#include <sqlite3core.h>
+#include <sqlite3.h>
 
 typedef void(*errorLogCallback)(void *pArg, int iErrCode, const char *zMsg);
 
