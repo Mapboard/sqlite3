@@ -17,8 +17,7 @@ let package = Package(
     targets: [
         .target(
             name: "CSQLite",
-            dependencies: ["sqlite3"],
-            publicHeadersPath: "public"),
+            dependencies: ["sqlite3"]),
          .target(
              name: "sqlite3",
              publicHeadersPath: "public",
