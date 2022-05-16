@@ -9,17 +9,11 @@ let package = Package(
     products: [
         .library(
             name: "CSQLite",
-            targets: ["CSQLite"]),
-         .library(
-             name: "sqlite3",
-             targets: ["sqlite3"])
+            targets: ["CSQLite"])
     ],
     targets: [
         .target(
             name: "CSQLite",
-            dependencies: ["sqlite3"]),
-         .target(
-             name: "sqlite3",
              publicHeadersPath: "public",
              cSettings: [
                .unsafeFlags(["-w"]),
