@@ -23,6 +23,7 @@ let package = Package(
              name: "sqlite3",
              publicHeadersPath: "public",
              cSettings: [
+               .unsafeFlags(["-w"]),
                .define("SQLITE_THREADSAFE"),
                .define("SQLITE_ENABLE_RTREE"),
                .define("SQLITE_ENABLE_COLUMN_METADATA"),
