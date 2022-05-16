@@ -4,24 +4,25 @@ import PackageDescription
 
 // https://developer.apple.com/documentation/swift_packages/bundling_resources_with_a_swift_package
 let package = Package(
-    name: "sqlite3",
+    name: "CSQLite",
     platforms: [.iOS(.v9), .macOS(.v10_10), .tvOS(.v9), .watchOS(.v2)],
     products: [
         .library(
-            name: "sqlite3",
-            targets: ["sqlite3"]),
+            name: "CSQLite",
+            targets: ["CSQLite"])
     ],
     targets: [
         .target(
-            name: "sqlite3",
-            publicHeadersPath: "public",
-            cSettings: [
-              .define("SQLITE_THREADSAFE"),
-              .define("SQLITE_ENABLE_RTREE"),
-              .define("SQLITE_ENABLE_COLUMN_METADATA"),
-              .define("SQLITE_ENABLE_FTS5"),
-              .define("SQLITE_ENABLE_SNAPSHOT")
-            ]
-        )
+            name: "CSQLite",
+             publicHeadersPath: "public",
+             cSettings: [
+               .unsafeFlags(["-w"]),
+               .define("SQLITE_THREADSAFE"),
+               .define("SQLITE_ENABLE_RTREE"),
+               .define("SQLITE_ENABLE_COLUMN_METADATA"),
+               .define("SQLITE_ENABLE_FTS5"),
+               .define("SQLITE_ENABLE_SNAPSHOT")
+             ]
+         )
     ]
 )
