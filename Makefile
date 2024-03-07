@@ -1,12 +1,10 @@
 SRC = .sources
 BUILD = .build
 
+.PHONY: all clean
+
 all: ./update.sh ${BUILD}/sqlite3
 	$^
-
-${SRC}:
-	mkdir -p $@
-	curl -L http://download.osgeo.org/proj/proj-9.0.0.tar.gz | tar -xz -C $@ --strip-components=1
 
 ${BUILD}/sqlite3: ${SRC}/sqlite3
 	rm -rf $@
@@ -17,4 +15,8 @@ ${BUILD}/sqlite3: ${SRC}/sqlite3
 
 ${SRC}/sqlite3:
 	mkdir -p $@
-	curl https://www.sqlite.org/2022/sqlite-autoconf-3380100.tar.gz | tar -xz -C $@ --strip-components=1
+	curl https://www.sqlite.org/2024/sqlite-autoconf-3450100.tar.gz | tar -xz -C $@ --strip-components=1
+
+clean:
+	rm -rf ${BUILD}
+	rm -rf ${SRC}
